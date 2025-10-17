@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bernalyn Demayo | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Georgia', serif;
+    }
+
+    body {
+      background-color: #f8f8f8;
+      line-height: 1.6;
+    }
+
+    header {
+      width: 100%;
+      background: #ff7f7f;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: fixed;
+      top: 0;
+      z-index: 100;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 20px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 100px 20px 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* Home Section */
+    #home {
+      background: #e4fc0e;
+      text-align: center;
+    }
+
+    #home img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 20px;
+      border: 4px solid #fff;
+    }
+
+    #home h2 {
+      margin-top: 15px;
+      font-size: 28px;
+    }
+
+    #home p {
+      font-size: 20px;
+    }
+
+    /* About Section */
+    #about {
+      background: #ff9a9a;
+      text-align: center;
+    }
+
+    #about img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      margin-top: 10px;
+      object-fit: cover;
+      border: 4px solid white;
+    }
+
+    #about .info {
+      text-align: left;
+      max-width: 500px;
+      margin-top: 20px;
+    }
+
+    .info p {
+      margin-bottom: 10px;
+    }
+
+    /* Resume Section */
+    #resume {
+      background:#25fa54;
+      text-align: center;
+      max-width: 1500px;
+      margin: auto;
+      margin-top: none;
+      width: 500%;
+      position: relative;
+    }
+
+    #resume h2 {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    #resume h3 {
+      margin-top: 15px;
+    }
+
+    #resume ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #resume li {
+      margin-bottom: 10px;
+    }
+
+    /* Portfolio Section */
+    #portfolio {
+      background: #02c9e4;
+      text-align: center;
+      width: 100%;
+    }
+
+    #portfolio img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 5px;
+      padding: 1px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: auto;
+      gap: 10px;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .project-box {
+      background: #df1885;
+      padding: 15px;
+      margin:5px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    /* Contact Section */
+    #contact {
+      background: #ff7f7f;
+      text-align: center;
+    }
+
+    .social-icons a img {
+      width: 40px;
+      margin: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .social-icons a img:hover {
+      transform: scale(1.1);
+    }
+
+    form {
+      max-width: 300px;
+      margin: 20px auto;
+      text-align: left;
+      padding: 10px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    form input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    form button {
+      background: #333;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .quote {
+      font-size: 14px;
+      margin-top: 15px;
+      font-style: italic;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 10px 5px;
+        font-size: 14px;
+      }
+
+      #home img, #about img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav a {
+        font-size: 12px;
+        margin: 5px;
+      }
+
+      #home h2 {
+        font-size: 20px;
+      }
+
+      #portfolio img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #about img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#resume">Resume</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home">
+    <h2>Hi! Welcome to my<br>Personal Portfolio</h2>
+    <p>I am <strong>Demayo, Bernalyn</strong></p>
+    <img src="pic1.png" alt="Profile Photo">
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>Who am I</h2>
+    <img src="pic1.png" alt="About Photo">
+    <div class="info">
+      <p>A Web Designer / Artist</p>
+      <p>Happiness is not something ready made, it comes from your own actions.</p>
+      <p><strong>Name:</strong> Demayo, Bernalyn</p>
+      <p><strong>Age:</strong> 20</p>
+      <p><strong>Contact:</strong> 0952 560 6919</p>
+      <p><strong>Gender:</strong> Female</p>
+      <p><strong>Birthday:</strong> May 09, 2005</p>
+      <p><strong>Address:</strong> Diplahan, Zamboanga Sibugay</p>
+    </div>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume">
+    <h2>My Resume</h2>
+    <h3>Education</h3>
+    <ul>
+      <li><strong>2013–2019</strong> - Junior High School, Balangao National High School</li>
+      <li><strong>2019–2021</strong> - Senior High School, Good Shepherd School of Imelda Inc.</li>
+      <li><strong>2024–2025</strong> - Sibugay Technical Institute Inc. (BS Information Technology)</li>
+    </ul>
+
+    <h3>My Skills</h3>
+    <ul>
+      <li>Cooking</li>
+      <li>Drawing</li>
+      <li>Cleaning</li>
+    </ul>
+
+    <h3>Languages</h3>
+    <ul>
+      <li>English</li>
+      <li>Bisaya</li>
+      <li>Tagalog</li>
+    </ul>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <h2>My Portfolio</h2>
+    <h3>Friends</h3>
+    <div>
+      <img src="friends1.jpg" alt="Friends 1">
+      <img src="friends2.jpg" alt="Friends 2">
+    </div>
+
+    <h3>Projects</h3>
+    <div class="project-grid">
+      <div class="project-box">
+        <h4>Project Title</h4>
+        <p>LIFE OF IT.</p>
+        <img src="portfolio.jpg" alt="portfolio">
+        <img src="project1.jpg" alt="Project 1">
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="social-icons">
+      <a href="mailto:your_email@example.com" target="_blank">
+        <img src="https://img.icons8.com/color/48/gmail.png" alt="Gmail">
+      </a>
+      <a href="https://facebook.com" target="_blank">
+        <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook">
+      </a>
+      <a href="https://instagram.com" target="_blank">
+        <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram">
+      </a>
+    </div>
+
+    <form>
+      <label for="service">Service:</label>
+      <input type="text" id="service" placeholder="Type your service">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email">
+
+      <label for="address">Address:</label>
+      <input type="text" id="address" placeholder="Enter your address">
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <p class="quote">Isaiah 43:19 — Never lose hope, just when you think it's over, God will make a way for you!</p>
+  </section>
+
+  <footer>
+    © 2025 Bernalyn Demayo | All Rights Reserved
+  </footer>
+
+</body>
+</html>
